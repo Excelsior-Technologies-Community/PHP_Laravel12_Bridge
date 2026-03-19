@@ -1,0 +1,23 @@
+service: php-laravel12-bridge
+
+provider:
+  name: aws
+  region: ap-south-1
+  runtime: provided.al2023
+
+plugins:
+  - ./vendor/bref/bref
+
+package:
+  patterns:
+    - '!node_modules/**'
+    - '!tests/**'
+    - '!storage/logs/**'
+
+functions:
+  web:
+    handler: public/index.php
+    memorySize: 1024
+    timeout: 28
+    events:
+      - httpApi: '*'
