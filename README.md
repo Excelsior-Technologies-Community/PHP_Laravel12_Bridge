@@ -243,3 +243,7 @@ PHP_Laravel12_Bridge/
 ```
 
 Your PHP_Laravel12_Bridge Project is now ready!
+<<<<<<< HEAD
+=======
+
+>>>>>>> development
