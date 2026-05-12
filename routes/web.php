@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MemberController;
 
 Route::get('/', function () {
-    return "Laravel 12 Bridge is Working 🚀";
+    return redirect()->route('members.index');
 });
+
+Route::resource('members', MemberController::class);
