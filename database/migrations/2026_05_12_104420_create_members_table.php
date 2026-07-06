@@ -15,10 +15,17 @@ return new class extends Migration
             $table->string('role');
             $table->timestamps();
         });
+
+        Schema::create('cloudwatch_search_histories', function (Blueprint $table) {
+            $table->id();
+            $table->string('search_query')->unique();
+            $table->timestamps();
+        });
     }
 
     public function down(): void
     {
+        Schema::dropIfExists('cloudwatch_search_histories');
         Schema::dropIfExists('members');
     }
 };
